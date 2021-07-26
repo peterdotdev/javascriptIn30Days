@@ -2,7 +2,7 @@ window.addEventListener('keydown', function(e) {
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
     if (!audio) return;
-    audio.currentTime = 0;; // Sin esto no se reproduciria hasta terminar de reproducirse por primera vez
+    audio.currentTime = 0; // Sin esto no se reproduciria hasta terminar de reproducirse por primera vez
     audio.play();
     key.classList.add("playing");
     setTimeout(function() { key.classList.remove("playing"); }, 100);
@@ -13,6 +13,8 @@ window.onload = function() {
     for (let value of iterable) {
         document.querySelector(`.key[data-key="${value}"]`).addEventListener('click', function() {
             const audio = document.querySelector(`audio[data-key="${value}"]`);
+            if (!audio) return;
+            audio.currentTime = 0;
             audio.play();
             document.querySelector(`.key[data-key="${value}"]`).classList.add("playing");
             setTimeout(function() { document.querySelector(`.key[data-key="${value}"]`).classList.remove("playing"); }, 100);
