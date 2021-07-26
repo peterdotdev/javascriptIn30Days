@@ -11,7 +11,7 @@ window.addEventListener('keydown', function(e) {
 window.onload = function() {
     let iterable = [65,83,68,70,71,72,74,75,76];
     for (let value of iterable) {
-        document.querySelector(`.key[data-key="${value}"]`).addEventListener('touchstart', function() {
+        document.querySelector(`.key[data-key="${value}"]`).addEventListener('click', function() {
             const audio = document.querySelector(`audio[data-key="${value}"]`);
             if (!audio) return;
             audio.currentTime = 0;
