@@ -2,7 +2,7 @@ window.addEventListener('keydown', function(e) {
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
     if (!audio) return;
-    audio.currentTime = 0; // Sin esto no se reproduciria hasta terminar de reproducirse por primera vez
+    setTimeout(function() { audio.currentTime = 0; }, 50); // Sin esto no se reproduciria hasta terminar de reproducirse por primera vez
     audio.play();
     key.classList.add("playing");
     setTimeout(function() { key.classList.remove("playing"); }, 100);
