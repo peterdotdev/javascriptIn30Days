@@ -18,11 +18,5 @@ window.onload = function() {
             document.querySelector(`.key[data-key="${value}"]`).classList.add("playing");
             setTimeout(function() { document.querySelector(`.key[data-key="${value}"]`).classList.remove("playing"); }, 100);
         });
-        document.querySelector(`.key[data-key="${value}"]`).addEventListener('touchstart', function() {
-            const audio = document.querySelector(`audio[data-key="${value}"]`);
-            audio.play();
-            document.querySelector(`.key[data-key="${value}"]`).classList.add("playing");
-            setTimeout(function() { document.querySelector(`.key[data-key="${value}"]`).classList.remove("playing"); }, 100);
-        });
     }
 }
