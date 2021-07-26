@@ -13,14 +13,14 @@ window.onload = function() {
     for (let value of iterable) {
         document.querySelector(`.key[data-key="${value}"]`).addEventListener('click', function() {
             const audio = document.querySelector(`audio[data-key="${value}"]`);
-            audio.currentTime = 0; // Sin esto no se reproduciria hasta terminar de reproducirse por primera vez
+            setTimeout(function() { audio.currentTime = 0; }, 50); // Sin esto no se reproduciria hasta terminar de reproducirse por primera vez
             audio.play();
             document.querySelector(`.key[data-key="${value}"]`).classList.add("playing");
             setTimeout(function() { document.querySelector(`.key[data-key="${value}"]`).classList.remove("playing"); }, 100);
         });
         document.querySelector(`.key[data-key="${value}"]`).addEventListener('touchstart', function() {
             const audio = document.querySelector(`audio[data-key="${value}"]`);
-            audio.currentTime = 0; // Sin esto no se reproduciria hasta terminar de reproducirse por primera vez
+            setTimeout(function() { audio.currentTime = 0; }, 50); // Sin esto no se reproduciria hasta terminar de reproducirse por primera vez
             audio.play();
             document.querySelector(`.key[data-key="${value}"]`).classList.add("playing");
             setTimeout(function() { document.querySelector(`.key[data-key="${value}"]`).classList.remove("playing"); }, 100);
